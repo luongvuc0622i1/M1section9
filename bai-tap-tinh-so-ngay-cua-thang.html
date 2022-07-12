@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số ngày của tháng</title>
+</head>
+<body>
+Nhập tháng cần kiểm tra số ngày:
+<input type="number" id="month" min="1" max="12">
+<button onclick="kiemtra()">Kiểm tra</button>
+<p id="value"></p>
+<script>
+    function kiemtra() {
+        let thang = document.getElementById("month").value;
+        switch (thang) {
+            case "2" :
+                int = " có 28 ngày (năm nhuận) hoặc 29 ngày (năm không nhuận).";
+                break;
+            case "1" :
+            case "3" :
+            case "5" :
+            case "7" :
+            case "8" :
+            case "10" :
+            case "12" :
+                int = " có 31 ngày.";
+                break;
+            default :
+                int = " có 30 ngày.";
+        }
+        document.getElementById("value").innerHTML = "Tháng " + thang + int;
+    }
+</script>
+</body>
+</html>
