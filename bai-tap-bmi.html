@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính chỉ số cơ thể BMI</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th colspan="3"><h1>Tính chỉ số cơ thể BMI</h1></th>
+  </tr>
+  <tr>
+    <td>Nhập cân nặng</td>
+    <td><input type="number" id="weight" name="weight"></td>
+    <td>(kg)</td>
+  </tr>
+  <tr>
+    <td>Nhập chiều cao</td>
+    <td><input type="number" id="height" name="height"></td>
+    <td>(m)</td>
+  </tr>
+</table>
+<button onclick="kiemtra()">Kiểm tra</button>
+<p id="result"></p>
+<script>
+  function kiemtra() {
+    let w = document.getElementById("weight").value;
+    let h = document.getElementById("height").value;
+    let bmi = w / (h * h)
+    let int = ""
+
+    if (bmi < 16) {
+      int = "Gầy độ 3. Ăn thật nhiều vào nhé" + "<img src = 'https://i.pinimg.com/originals/3b/97/63/3b97635b6bd4a5bfc436fbd3908f05e0.gif' width='100' height= '100'>"
+    } else if (bmi < 17) {
+      int = "Gầy độ 2"
+    } else if (bmi < 18.5) {
+      int = "Gầy độ 1"
+    } else if (bmi < 25) {
+      int = "Bình thường"
+    } else if (bmi < 30) {
+      int = "Béo phì độ 1"
+    } else if (bmi < 40) {
+      int = "Béo phì độ 2"
+    } else {
+      int = "Béo phì độ 3" + "<img src = 'https://i.pinimg.com/originals/73/4d/11/734d11cc677595ce3c3e5e3bba02721f.gif' width='100' height= '100'>"
+    }
+    document.getElementById("result").innerHTML = "Chỉ số BMI của bạn là: " + bmi + ". Bạn đang " + int;
+  }
+</script>
+</body>
+</html>
